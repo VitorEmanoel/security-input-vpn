@@ -7,6 +7,8 @@ resource "aws_instance" "ubuntu_instance" {
 
   associate_public_ip_address = true
 
+  depends_on = [ aws_security_group.vpn_security_group ]
+
   tags = {
     Name = "security-input-vpn"
   }
